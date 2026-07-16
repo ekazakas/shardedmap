@@ -109,7 +109,7 @@ BenchmarkWriteOnly/ShardedMap_1024_shards-22       	81759836	        18.44 ns/op
 BenchmarkWriteOnly/sync.Map_Baseline
 BenchmarkWriteOnly/sync.Map_Baseline-22            	33074616	        34.98 ns/op
 BenchmarkWriteOnly/MutexMap_Baseline
-BenchmarkWriteOnly/MutexMap_Baseline-22            	 6566796	       157.8 ns/op
+BenchmarkWriteOnly/MutexMap_Baseline-22            	 6566796	        157.8 ns/op
 PASS
 ```
 
@@ -123,7 +123,7 @@ BenchmarkReadHeavy
 BenchmarkReadHeavy/ShardedMap_1024_shards
 BenchmarkReadHeavy/ShardedMap_1024_shards-22         	95417835	        11.69 ns/op
 BenchmarkReadHeavy/sync.Map_Baseline
-BenchmarkReadHeavy/sync.Map_Baseline-22              	211990609	         6.039 ns/op
+BenchmarkReadHeavy/sync.Map_Baseline-22              	211990609	        6.039 ns/op
 BenchmarkReadHeavy/MutexMap_Baseline
 BenchmarkReadHeavy/MutexMap_Baseline-22              	40393324	        26.65 ns/op
 PASS
