@@ -1,0 +1,66 @@
+version: "2"
+linters:
+  enable:
+    - asasalint
+    - bodyclose
+    - containedctx
+    - copyloopvar
+    - decorder
+    - dupword
+    - durationcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - goconst
+    - gocritic
+    - gosec
+    - intrange
+    - lll
+    - mirror
+    - misspell
+    - musttag
+    - nestif
+    - nilerr
+    - nilnil
+    - perfsprint
+    - prealloc
+    - predeclared
+    - promlinter
+    - revive
+    - testifylint
+    - unconvert
+    - unparam
+    - usestdlibvars
+    - wastedassign
+    - whitespace
+    - wrapcheck
+  settings:
+    decorder:
+      dec-order:
+        - const
+        - var
+        - type
+        - func
+      disable-dec-order-check: false
+      disable-init-func-first-check: false
+    goconst:
+      min-occurrences: 5
+    misspell:
+      locale: US
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    paths:
+      - examples$
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - examples$

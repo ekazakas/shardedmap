@@ -1,0 +1,47 @@
+version: '3'
+
+silent: false
+
+vars:
+  PWD:
+    sh: pwd
+  GOPATH:
+    sh: go env GOPATH
+  GOARCH:
+    sh: go env GOARCH
+  GOHOSTOS:
+    sh: go env GOHOSTOS
+
+tasks:
+  vuln:
+    desc: Run govulncheck vulnerability check
+    cmds:
+      - govulncheck ./...
+
+  vet:
+    desc: Run vet tool
+    cmds:
+      - go vet $(go list ./...)
+
+  lint:
+    desc: Run linter
+    cmds:
+      - golangci-lint run ./...
+
+  lint-fix:
+    desc: Run auto fix for linter errors
+    cmds:
+      - golangci-lint run --fix ./...
+
+  unit:
+    desc: Run unit tests
+    cmds:
+      - go test ./...
+
+  test:
+    desc: Run all tests
+    cmds:
+      - task: vet
+      - task: lint
+      - task: unit
+      - task: vuln
